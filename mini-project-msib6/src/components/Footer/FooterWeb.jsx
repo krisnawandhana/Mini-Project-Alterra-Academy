@@ -19,7 +19,10 @@ const FooterWeb = () => {
         </a>
       </div>
       <div className="w-[80vw] border-t-2 border-primary500 my-4"></div>
-      <p>©Krisna Wandhana . ALL RIGHTS RESERVED.</p>
+        <div className="justify-center text-center">
+          <p>Copyright © 2024 Rangga Permana. All rights reserved.</p>
+          <p>This website was designed by Rangga Permana and integrated into the web by Krisna Wandhana.</p>
+        </div>
     </div>
   );
 };

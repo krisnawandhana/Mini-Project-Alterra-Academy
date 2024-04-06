@@ -11,3 +11,7 @@ body {
 div {
     background-color: #FDF1EF;
 }
+
+.hover-full:hover .absolute {
+    @apply w-full h-full;
+  }

@@ -40,7 +40,7 @@ const Navbar = () => {
         <div className="grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-8">
           {navbarLists.map((navbarList) => {
             return (
-              <div className="col-span-2" key={navbarList.id}>
+              <div className="col-span-2 text-rose-300" key={navbarList.id}>
                 <a href={navbarList.url}>
                   <div className="flex gap-4">
                     <p className="font-black text-primary700 tracking-[4px]">
