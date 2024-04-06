@@ -39,12 +39,12 @@ function App() {
             <div className="group relative">
               <img src="/assets/merch.png" alt="merch 1" className="w-1/1 rounded-lg shadow-md group-hover:scale-105 transition duration-300"/>
               <div className="rounded-lg absolute inset-0 bg-gradient-to-b from-transparent to-rose-300 opacity-0 group-hover:opacity-60 scale-105 transition duration-300"></div>
-              <p className="text-white absolute inset-0 px-4 py-2 invisible group-hover:visible transition duration-300">Merch Description 1</p>
+              <p className="text-white absolute inset-x-0 bottom-0 px-4 py-2 invisible group-hover:visible scale-105 transition duration-300">Merch Description 1</p>
             </div>
             <div className="group relative">
               <img src="/assets/merch.png" alt="merch 2" className="w-1/1 rounded-lg shadow-md group-hover:scale-105 transition duration-300"/>
               <div className="rounded-lg absolute inset-0 bg-gradient-to-b from-transparent to-rose-300 opacity-0 group-hover:opacity-60 scale-105 transition duration-300"></div>
-              <p className="text-white absolute inset-0 px-4 py-2 invisible group-hover:visible transition duration-300">Merch Description 2</p>
+              <p className="text-white absolute inset-x-0 bottom-0 px-4 py-2 invisible group-hover:visible scale-105 transition duration-300">Merch Description 2</p>
             </div>
             <div className="group relative">
               <img src="/assets/merch.png" alt="merch 3" className="w-1/1 rounded-lg shadow-md group-hover:scale-105 transition duration-300"/>
