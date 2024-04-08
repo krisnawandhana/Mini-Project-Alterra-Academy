@@ -40,20 +40,15 @@ const Navbar = () => {
         <div className="grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-8">
           {navbarLists.map((navbarList) => {
             return (
-              <div className="col-span-2 text-rose-300" key={navbarList.id}>
+              <div className="flex col-span-2 text-rose-300 items-center" key={navbarList.id}>
                 <a href={navbarList.url}>
-                  <div className="flex gap-4">
-                    <p className="font-black text-primary700 tracking-[4px]">
+                  <div className="flex items-center hover:bg-rose-300 rounded hover:text-white p-2">
+                    <p className="font-semibold tracking-[4px]">
                       0{navbarList.id}.
                     </p>
-                    <div className="flex flex-col">
-                      <p className="uppercase font-black tracking-[4px] text-primary700">
+                    <p className="flex flex-col uppercase font-semibold tracking-[3px]">
                         {navbarList.name}
-                      </p>
-                      <p className="text-sm tracking-[4px] text-primary500">
-                        {navbarList.subname}
-                      </p>
-                    </div>
+                    </p>
                   </div>
                 </a>
               </div>

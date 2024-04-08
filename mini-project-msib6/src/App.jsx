@@ -21,7 +21,7 @@ function App() {
 
         <div className="flex flex-col gap-[25px] py-[25px]"> 
           <Navbar className="my-8" />
-          <img src="/assets/wallpaper.png" alt="carousell" />
+          <img src="/assets/wallpaper.jpg" alt="carousell" className="max-w-full h-auto object-cover" style={{ maxHeight: "400px" }}/>
         </div>
 
         <div className="container">
@@ -53,7 +53,7 @@ function App() {
             </div>
           </div>
           <br />
-          <a href="#" className="mt-4 font-sheriff my-8 text-rose-300 text-lg flex justify-end items-end">More Merch &rarr;</a>
+          <a href="#" className="mt-4 font-sheriff my-8 text-rose-300 text-lg flex justify-end items-end hover:scale-105 transition duration-300">More Merch &rarr;</a>
         </div>
 
         <div className="container">
@@ -94,7 +94,7 @@ function App() {
           </div>
 
           <br />
-          <a href="#" className="mt-4 font-serif my-8 text-rose-300 text-lg flex justify-end items-end">More Gallery &rarr;</a>
+          <a href="#" className="mt-4 font-serif my-8 text-rose-300 text-lg flex justify-end items-end hover:scale-105 transition duration-300">More Gallery &rarr;</a>
         </div>
 
         <Footer />

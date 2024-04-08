@@ -42,7 +42,7 @@ const News = () => {
       </table>
 
       <br />
-      <a href="#" className="font-s text-rose-300 text-lg flex justify-end items-end">More News &rarr;</a>
+      <a href="#" className="font-s text-rose-300 text-lg flex justify-end items-end hover:scale-105 transition duration-300">More News &rarr;</a>
     </div>
   );
 };
