@@ -30,7 +30,7 @@ const navbarLists = [
   {
     id: 6,
     name: "Profile",
-    url: "/profile",
+    url: "/AboutUs",
   },
 ];
 
