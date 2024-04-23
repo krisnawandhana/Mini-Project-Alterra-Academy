@@ -15,3 +15,9 @@ div {
 .hover-full:hover .absolute {
     @apply w-full h-full;
   }
+
+  @media (max-width: 768px) {
+    .navbar {
+      position: fixed;
+    }
+  }

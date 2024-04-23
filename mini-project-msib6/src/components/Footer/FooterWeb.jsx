@@ -5,7 +5,7 @@ import { FaFacebook } from "react-icons/fa";
 
 const FooterWeb = () => {
   return (
-    <div className="container flex flex-col gap-8 justify-center items-center">
+    <div className="mt-8 container flex flex-col gap-8 justify-center items-center">
       <img src="/lipsum.svg" alt="logo-lipsum" width={"215px"} />
       <div className="flex gap-8">
         <a href="https://www.instagram.com/krisna.wandhana/" target="_blank" rel="noopener noreferrer">
