@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const navbarLists = [
   {
@@ -41,7 +42,7 @@ const Navbar = () => {
           {navbarLists.map((navbarList) => {
             return (
               <div className="flex col-span-2 text-rose-300 items-center" key={navbarList.id}>
-                <a href={navbarList.url}>
+                <Link to={navbarList.url}>
                   <div className="flex items-center hover:text-rose-400 p-2">
                     <p className="font-semibold tracking-[4px]">
                       0{navbarList.id}.
@@ -50,7 +51,7 @@ const Navbar = () => {
                         {navbarList.name}
                     </p>
                   </div>
-                </a>
+                </Link>
               </div>
             );
           })}
