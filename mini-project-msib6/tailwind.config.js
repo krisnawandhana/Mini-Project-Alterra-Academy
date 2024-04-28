@@ -11,7 +11,7 @@ export default {
       fontBlack: "#464646",
     },
     screens: {
-      // sm: "640px",
+      sm: "576px",
       // => @media (min-width: 576px) { ... }
 
       md: "768px",
