@@ -31,7 +31,7 @@ const AboutUs = () => {
         ANGGOTA TIM KAMI
       </p>
 
-      <div className="flex gap-20 m-8 text-[#424242]">
+      <div className="flex flex-col md:flex-row gap-20 m-8 text-[#424242]">
         <div className="flex flex-col items-center">
           <img src="/assets/AboutUs/avatar1.png" alt="avatar1" className="rounded-full object-cover mb-2" style={{ aspectRatio: '1 / 1', maxHeight: "200px" }} />
           <p className="opacity-40">
