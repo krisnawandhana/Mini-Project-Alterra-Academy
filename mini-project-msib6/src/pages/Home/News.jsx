@@ -1,19 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import NewsTable from "../../components/NewsTable/NewsTable";
 
 const News = () => {
-  const [entries, setEntries] = useState([
-    { date: "2023.12.06", category: "Cosplay", title: "Die Fröhliche 『天使の聖域』" },
-    { date: "2023.12.07", category: "Cosplay", title: "Die Fröhliche 『天使の聖域』" },
-    { date: "2023.12.07", category: "Cosplay", title: "Die Fröhliche 『天使の聖域』" },
-    { date: "2023.12.07", category: "Cosplay", title: "Die Fröhliche 『天使の聖域』" },
-    { date: "2023.12.07", category: "Cosplay", title: "Die Fröhliche 『天使の聖域』" }
-  ]);
-
+  const [entries, setEntries] = useState([]);
   const [hoveredRow, setHoveredRow] = useState(null);
 
-  const latestEntries = entries.slice(0, 3);
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get('https://662e4424a7dda1fa378c7e95.mockapi.io/News');
+      // Urutkan data berdasarkan ID secara menurun
+      const sortedData = response.data.sort((a, b) => b.id - a.id);
+      // Ambil 3 data pertama setelah data diurutkan
+      const latestEntries = sortedData.slice(0, 3);
+      setEntries(latestEntries);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
 
   return (
     <div>
@@ -23,7 +32,7 @@ const News = () => {
         <hr className="flex-grow border-t-4 border-rose-300 w-8" />
       </div>
 
-      <NewsTable entries={latestEntries} hoveredRow={hoveredRow} setHoveredRow={setHoveredRow} />
+      <NewsTable entries={entries} hoveredRow={hoveredRow} setHoveredRow={setHoveredRow} />
 
       <br />
       <Link to="/MoreNews" className="mt-4 font-serif my-8 text-rose-300 text-lg flex justify-end items-end hover:text-rose-400 hover:scale-105 transition duration-300">More News &rarr;</Link>

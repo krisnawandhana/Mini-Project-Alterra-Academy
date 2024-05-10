@@ -14,21 +14,16 @@ const navbarLists = [
   },
   {
     id: 3,
-    name: "Merch",
-    url: "/MoreMerch",
-  },
-  {
-    id: 4,
     name: "Gallery",
     url: "/MoreGallery",
   },
   {
-    id: 5,
+    id: 4,
     name: "Letter",
     url: "/confession",
   },
   {
-    id: 6,
+    id: 5,
     name: "Profile",
     url: "/AboutUs",
   },
@@ -38,7 +33,7 @@ const Navbar = () => {
   return (
     <nav>
       <div className="container">
-        <div className="grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-8">
+        <div className="grid grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-8">
           {navbarLists.map((navbarList) => {
             return (
               <div className="flex col-span-2 text-rose-300 items-center" key={navbarList.id}>

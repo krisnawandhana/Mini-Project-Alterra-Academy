@@ -21,3 +21,8 @@ div {
       position: fixed;
     }
   }
+
+  .carousel-item .btn {
+    background-color: transparent; /* Mengatur latar belakang tombol menjadi transparan */
+  }
+  
