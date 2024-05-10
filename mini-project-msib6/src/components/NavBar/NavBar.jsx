@@ -33,7 +33,7 @@ const Navbar = () => {
   return (
     <nav>
       <div className="container">
-        <div className="grid grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-8">
+        <div className="grid grid-cols-3 md:grid-cols-7 lg:grid-cols-11 gap-8">
           {navbarLists.map((navbarList) => {
             return (
               <div className="flex col-span-2 text-rose-300 items-center" key={navbarList.id}>
