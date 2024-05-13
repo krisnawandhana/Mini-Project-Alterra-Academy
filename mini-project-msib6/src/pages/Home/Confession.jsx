@@ -8,6 +8,7 @@ const Confession = () => {
     const [emailaddress, setEmailadress] = useState('');
     const [message, setMessage] = useState('');
     const [isAnonymous, setIsAnonymous] = useState(false);
+    const api_msg = import.meta.env.VITE_API_URL_CONFESSION;
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -34,7 +35,7 @@ const Confession = () => {
                 };
             }
             try {
-                const response = await axios.post('https://662e4424a7dda1fa378c7e95.mockapi.io/Confession', postData);
+                const response = await axios.post(api_msg, postData);
                 if (response.status === 201) {
                     alert("Your message has been sent successfully");
                 } else {

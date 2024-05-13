@@ -1,9 +1,7 @@
 import React from 'react'
 import Summary from './Home/Summary'
 import News from './Home/News'
-import Merch from './Home/Merch'
 import Gallery from './Home/Gallery'
-// import Carousel from './Home/Carousel'
 
 export default function Home() {
   return (
@@ -20,7 +18,6 @@ export default function Home() {
         <div className="container">
           <Summary /> 
           <News />
-          {/* <Merch /> */}
           <Gallery />
         </div>
     </div>

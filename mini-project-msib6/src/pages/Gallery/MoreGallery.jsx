@@ -1,16 +1,8 @@
 import React, { useState } from 'react';
+import imagesData from '../../data/images.json'
 
 const MoreGallery = () => {
-  const [images, setImages] = useState([
-    { id: 1, url: '/assets/Gallery/img_1.jpg', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-    { id: 2, url: '/assets/Gallery/img_2.jpg', description: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' },
-    { id: 3, url: '/assets/Gallery/img_3.jpg', description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' },
-    { id: 4, url: '/assets/Gallery/img_4.jpg', description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.' },
-    { id: 5, url: '/assets/Gallery/img_5.jpg', description: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' },
-    { id: 6, url: '/assets/Gallery/img_6.jpg', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-    { id: 7, url: '/assets/Gallery/img_7.jpg', description: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' },
-  ]);
-
+  const [images, setImages] = useState(imagesData);
   const [searchTerm, setSearchTerm] = useState('');
   const [uploading, setUploading] = useState(false);
   const [newImage, setNewImage] = useState(null);
@@ -142,12 +134,13 @@ const MoreGallery = () => {
                 <button onClick={() => handleEditImage(image.id)} className="bg-sky-300 px-4 py-2 rounded-xl text-white hover:bg-sky-500 mr-2">Edit</button>
                 <button onClick={() => handleDeleteImage(image.id)} className="bg-red-400 px-4 py-2 rounded-xl text-white hover:bg-red-600">Delete</button>
               </div>
-            )}
+            )}  
           </div>
         ))}
       </div>
     </div>
   );
+
 };
 
 export default MoreGallery;

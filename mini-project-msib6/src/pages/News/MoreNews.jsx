@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import NewsTable from '../../components/NewsTable/NewsTable'; // Import NewsTable component
+import NewsTable from '../../components/NewsTable/NewsTable';
 
 export default function MoreNews() {
   const apiUrl = import.meta.env.VITE_API_URL_NEWS;
   const [entries, setEntries] = useState([]);
-  const [showNewEntryForm, setShowNewEntryForm] = useState(false); // State untuk mengontrol pop-up
+  const [showNewEntryForm, setShowNewEntryForm] = useState(false);
   const [hoveredRow, setHoveredRow] = useState(null);
-  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn') === 'true'); // Get login status
+  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn') === 'true');
   const [editEntryId, setEditEntryId] = useState(null);
   const [newEntry, setNewEntry] = useState({
-    tanggal: "", 
-    kategori: "", 
-    judul: "" 
+    date: "", // Initialize date as empty string
+    title: "",
+    category: "",
+    description: "",
+    id: ""
   });
 
   useEffect(() => {
@@ -23,10 +25,11 @@ export default function MoreNews() {
     try {
       const response = await axios.get(apiUrl);
       const formattedData = response.data.map(item => ({
-        id: item.id,
-        tanggal: item.tanggal,
-        kategori: item.kategori,
-        judul: item.judul
+        date: item.date, // Keep date as is
+        title: item.title,
+        category: item.category,
+        description: item.description,
+        id: item.id.toString()
       }));
       setEntries(formattedData);
     } catch (error) {
@@ -45,7 +48,7 @@ export default function MoreNews() {
   const handlePost = async () => {
     try {
       await axios.post(apiUrl, newEntry);
-      setNewEntry({ tanggal: "", kategori: "", judul: "" });
+      setNewEntry({ date: "", title: "", category: "", description: "", id: "" }); // Reset newEntry after submission
       setShowNewEntryForm(false);
       fetchData();
     } catch (error) {
@@ -72,7 +75,7 @@ export default function MoreNews() {
       console.error('Error deleting entry:', error);
     }
   };
-  
+
   const handleEdit = (id) => {
     setEditEntryId(id);
     const entryToEdit = entries.find(entry => entry.id === id);
@@ -82,7 +85,7 @@ export default function MoreNews() {
 
   const toggleNewEntryForm = (editMode = false) => {
     setEditEntryId(editMode ? editEntryId : null);
-    setShowNewEntryForm(!showNewEntryForm); // Memperbarui state untuk menampilkan atau menyembunyikan pop-up
+    setShowNewEntryForm(!showNewEntryForm);
   };
 
   return (
@@ -106,10 +109,10 @@ export default function MoreNews() {
 
       <NewsTable
         entries={entries}
-        hoveredRow={hoveredRow} 
+        hoveredRow={hoveredRow}
         setHoveredRow={setHoveredRow}
         handleEdit={handleEdit}
-        handleDelete={handleDelete} // Menambahkan properti handleDelete
+        handleDelete={handleDelete}
       />
 
       {isLoggedIn && (
@@ -123,26 +126,33 @@ export default function MoreNews() {
               <div className="bg-white p-8 rounded-lg">
                 <h2 className="font-bold text-lg mb-4 text-rose-300">Add New Entry</h2>
                 <input
-                  type="text"
-                  name="tanggal"
-                  placeholder="Date (YYYY.MM.DD)"
-                  value={newEntry.tanggal}
+                  type="date"
+                  name="date"
+                  value={newEntry.date}
                   onChange={handleChange}
                   className="bg-gray-50 border border-gray-300 rounded-md px-3 py-2 mb-2 mr-4"
                 />
                 <input
+                    type="text"
+                    name="title"
+                    placeholder="Title"
+                    value={newEntry.title}
+                    onChange={handleChange}
+                    className="bg-gray-50 border border-gray-300 rounded-md px-3 py-2 mb-2 mr-4"
+                  />
+                <input
                   type="text"
-                  name="kategori"
+                  name="category"
                   placeholder="Category"
-                  value={newEntry.kategori}
+                  value={newEntry.category}
                   onChange={handleChange}
                   className="bg-gray-50 border border-gray-300 rounded-md px-3 py-2 mb-2 mr-4"
                 />
                 <input
                   type="text"
-                  name="judul"
-                  placeholder="Title"
-                  value={newEntry.judul}
+                  name="description"
+                  placeholder="Description"
+                  value={newEntry.description}
                   onChange={handleChange}
                   className="bg-gray-50 border border-gray-300 rounded-md px-3 py-2 mb-2 mr-4"
                 />

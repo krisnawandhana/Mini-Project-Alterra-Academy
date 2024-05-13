@@ -6,6 +6,7 @@ import NewsTable from "../../components/NewsTable/NewsTable";
 const News = () => {
   const [entries, setEntries] = useState([]);
   const [hoveredRow, setHoveredRow] = useState(null);
+  const apiUrl = import.meta.env.VITE_API_URL_NEWS;
 
   useEffect(() => {
     fetchData();
@@ -13,7 +14,7 @@ const News = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('https://662e4424a7dda1fa378c7e95.mockapi.io/News');
+      const response = await axios.get(apiUrl);
       // Urutkan data berdasarkan ID secara menurun
       const sortedData = response.data.sort((a, b) => b.id - a.id);
       // Ambil 3 data pertama setelah data diurutkan

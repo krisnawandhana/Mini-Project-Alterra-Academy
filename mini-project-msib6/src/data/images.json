@@ -1,0 +1,37 @@
+[
+    {
+      "id": 1,
+      "url": "/assets/Gallery/img_1.jpg",
+      "description": "Pesona karakter hidup di dunia nyata."
+    },
+    {
+      "id": 2,
+      "url": "/assets/Gallery/img_2.jpg",
+      "description": "Berbagai alam fantasi bertemu dalam satu tempat."
+    },
+    {
+      "id": 3,
+      "url": "/assets/Gallery/img_3.jpg",
+      "description": "Cosplayer memerankan karakter favorit mereka."
+    },
+    {
+      "id": 4,
+      "url": "/assets/Gallery/img_4.jpg",
+      "description": "Komunitas berkumpul dalam semangat yang menyenangkan."
+    },
+    {
+      "id": 5,
+      "url": "/assets/Gallery/img_5.jpg",
+      "description": "Dengan tiap not musik, suasana berubah menjadi panggung kegembiraan yang mempesona, mengikat penonton dalam getaran musik."
+    },
+    {
+      "id": 6,
+      "url": "/assets/Gallery/img_6.jpg",
+      "description": "Kehidupan baru dalam kostum yang menakjubkan."
+    },
+    {
+      "id": 7,
+      "url": "/assets/Gallery/img_7.jpg",
+      "description": "Pesona cosplay meramaikan setiap sudut."
+    }
+  ]
